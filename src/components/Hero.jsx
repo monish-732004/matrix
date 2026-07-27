@@ -48,6 +48,14 @@ export default function Hero({ onEnter }) {
         transition={{ duration: 0.8 }}
         className="glass crt-flicker relative z-10 flex w-full max-w-2xl flex-col items-center gap-6 rounded-2xl border-glow-green px-6 py-12 text-center sm:px-12"
       >
+        <div className="rounded-xl border border-matrix-green/40 bg-white/95 p-2 shadow-[0_0_18px_rgba(0,255,65,0.35)] sm:p-3">
+          <img
+            src="/logo.jpeg"
+            alt="ACM SIGCHI SRM"
+            className="h-14 w-auto rounded-md sm:h-20"
+          />
+        </div>
+
         <span className="font-terminal text-xs tracking-[0.3em] text-matrix-blue text-glow-blue sm:text-sm">
           ACM SIGCHI SRM
         </span>

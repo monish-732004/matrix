@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import ScanlineOverlay from "./components/ScanlineOverlay";
-import Logo from "./components/Logo";
 import Hero from "./components/Hero";
 import Quote from "./components/Quote";
 import DomainCards from "./components/DomainCards";
@@ -54,7 +53,6 @@ function App() {
   return (
     <div className="relative min-h-screen w-full bg-matrix-bg">
       <ScanlineOverlay />
-      <Logo />
 
       <Hero onEnter={scrollToForm} />
       <Quote />
