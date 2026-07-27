@@ -19,7 +19,7 @@ export default function TerminalField({
         htmlFor={name}
         className="mb-2 block font-terminal text-sm text-matrix-green text-glow-green"
       >
-        &gt; {label}
+        &gt; {label} <span className="text-matrix-red">*</span>
       </label>
       <div
         className={`flex items-start gap-1 border-b-2 pb-2 transition-colors ${
@@ -38,6 +38,7 @@ export default function TerminalField({
           placeholder={placeholder}
           className="w-full resize-none bg-transparent font-terminal text-base text-white placeholder-white/20 outline-none"
           autoComplete="off"
+          required
         />
         {focused && (
           <span className="animate-blink font-terminal text-matrix-green">█</span>

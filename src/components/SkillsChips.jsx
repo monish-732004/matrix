@@ -28,7 +28,8 @@ export default function SkillsChips({ selected, onToggle }) {
           Skills
         </h2>
         <p className="mt-3 font-terminal text-sm text-matrix-gray">
-          Tag your capabilities in the system.
+          Tag your capabilities in the system.{" "}
+          <span className="text-matrix-red">* (select at least one)</span>
         </p>
       </FadeIn>
 

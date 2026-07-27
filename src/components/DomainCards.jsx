@@ -19,7 +19,8 @@ export default function DomainCards({ selected, onToggle }) {
           Choose Your Domain
         </h2>
         <p className="mt-3 font-terminal text-sm text-matrix-gray">
-          Select every path that calls to you.
+          Select every path that calls to you.{" "}
+          <span className="text-matrix-red">* (select at least one)</span>
         </p>
       </FadeIn>
 

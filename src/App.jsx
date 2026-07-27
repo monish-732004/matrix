@@ -44,7 +44,11 @@ function App() {
     candidate.regNumber.trim() &&
     candidate.email.trim() &&
     candidate.phone.trim() &&
-    domains.length > 0;
+    domains.length > 0 &&
+    skills.length > 0 &&
+    answers.whyJoin.trim() &&
+    answers.whyYou.trim() &&
+    answers.projects.trim();
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth" });
