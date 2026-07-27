@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  --color-matrix-bg: #050505;
+  --color-matrix-green: #00ff41;
+  --color-matrix-blue: #00cfff;
+  --color-matrix-red: #ff3131;
+  --color-matrix-gray: #a0a0a0;
+
+  --font-heading: "Orbitron", sans-serif;
+  --font-terminal: "JetBrains Mono", monospace;
+  --font-body: "Inter", sans-serif;
+
+  --animate-blink: blink 1s step-end infinite;
+  --animate-flicker: flicker 6s linear infinite;
+  --animate-scan: scan 8s linear infinite;
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  @keyframes flicker {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    92% {
+      opacity: 1;
+    }
+    92.5% {
+      opacity: 0.86;
+    }
+    93% {
+      opacity: 1;
+    }
+    93.6% {
+      opacity: 0.9;
+    }
+    94% {
+      opacity: 1;
+    }
+  }
+  @keyframes scan {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-matrix-bg);
+  color: #fff;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-matrix-green);
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #0a4a1c;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-matrix-green);
+}
+
+.text-glow-green {
+  text-shadow:
+    0 0 4px rgba(0, 255, 65, 0.8),
+    0 0 16px rgba(0, 255, 65, 0.5),
+    0 0 40px rgba(0, 255, 65, 0.25);
+}
+.text-glow-blue {
+  text-shadow:
+    0 0 4px rgba(0, 207, 255, 0.8),
+    0 0 16px rgba(0, 207, 255, 0.5);
+}
+.text-glow-red {
+  text-shadow:
+    0 0 4px rgba(255, 49, 49, 0.9),
+    0 0 20px rgba(255, 49, 49, 0.6);
+}
+
+.border-glow-green {
+  box-shadow:
+    0 0 6px rgba(0, 255, 65, 0.5),
+    0 0 24px rgba(0, 255, 65, 0.15),
+    inset 0 0 20px rgba(0, 255, 65, 0.05);
+}
+
+.crt-flicker {
+  animation: var(--animate-flicker);
+}
+
+.scanline-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.025) 0px,
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: overlay;
+}
+
+.scanline-overlay::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 255, 65, 0.06),
+    transparent
+  );
+  animation: var(--animate-scan);
+}
+
+.glass {
+  background: rgba(10, 12, 10, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 255, 65, 0.18);
+}
