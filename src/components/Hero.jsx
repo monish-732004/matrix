@@ -58,6 +58,11 @@ export default function Hero({ onEnter }) {
           <span className="animate-blink">OPEN</span>
         </h1>
 
+        <div className="flex items-center gap-2 rounded-full border border-matrix-blue/40 bg-matrix-blue/5 px-4 py-1.5 font-terminal text-xs tracking-widest text-matrix-blue text-glow-blue sm:text-sm">
+          <span className="h-1.5 w-1.5 animate-blink rounded-full bg-matrix-blue" />
+          RECRUITMENT DRIVE: AUG 01 – 02
+        </div>
+
         <div className="h-px w-2/3 bg-gradient-to-r from-transparent via-matrix-green/60 to-transparent" />
 
         <p className="font-terminal text-sm leading-relaxed tracking-wide text-matrix-gray sm:text-base">

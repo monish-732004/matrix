@@ -144,7 +144,8 @@ export default function SubmissionOverlay({ payload, onClose }) {
                 Welcome to ACM SIGCHI SRM.
               </p>
               <p className="font-terminal text-sm text-matrix-gray">
-                Your entry has been logged. Watch your inbox for what comes next.
+                Your entry has been logged. The recruitment drive runs Aug 1 – 2 —
+                watch your inbox for details.
               </p>
               <button
                 type="button"
